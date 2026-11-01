@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="color-scheme" content="light dark"> -->
 <meta name="color-scheme" content="light dark">
 <script>
 (function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}
-if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+// if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+if(t!=='light'&&t!=='dark'){t='light'}        
 document.documentElement.setAttribute('data-theme',t)})();
 </script>
 <title>Dileep Kumar | ML Engineer & Data Analyst</title>
@@ -776,7 +778,7 @@ function set(t,save){root.classList.add('theme-anim');root.setAttribute('data-th
  setTimeout(function(){root.classList.remove('theme-anim')},450)}
 label();
 btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark',true)});
-if(window.matchMedia){matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){var t=null;try{t=localStorage.getItem('theme')}catch(x){}if(!t)set(e.matches?'dark':'light',false)})}
+// if(window.matchMedia){matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){var t=null;try{t=localStorage.getItem('theme')}catch(x){}if(!t)set(e.matches?'dark':'light',false)})}
 })();
 </script>
 </body>
