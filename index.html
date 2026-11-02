@@ -4,12 +4,10 @@
 <meta charset="utf-8">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <meta name="color-scheme" content="light dark"> -->
 <meta name="color-scheme" content="light dark">
 <script>
 (function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}
-// if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
-if(t!=='light'&&t!=='dark'){t='light'}        
+if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
 document.documentElement.setAttribute('data-theme',t)})();
 </script>
 <title>Dileep Kumar | ML Engineer & Data Analyst</title>
@@ -142,6 +140,7 @@ section:nth-of-type(even){background:linear-gradient(180deg,transparent,rgba(59,
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
 @media (max-width:760px){.hero{padding:36px 20px}.ring{width:220px;height:220px}}
 
+/* .exp-grid{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start} */
 .exp-grid{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:start}
 .sticky-photo{position:sticky;top:90px;margin:0;border-radius:20px;overflow:hidden;background:var(--panel);box-shadow:0 14px 34px rgba(20,33,43,.18);border:3px solid transparent;background-clip:padding-box;outline:3px solid transparent;animation:bob 6s ease-in-out infinite}
 .sticky-photo::before{content:"";position:absolute;inset:0;border-radius:20px;padding:3px;background:linear-gradient(135deg,var(--a3),var(--a4),var(--a2),var(--accent));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
@@ -241,6 +240,20 @@ html[data-theme="dark"] .hero .btn.ghost,html[data-theme="dark"] .hero .btn.prim
 html[data-theme="dark"] .hero .btn.primary{color:#0f2a3a}
 html[data-theme="dark"] .nav a:hover{color:var(--accent)}
 html[data-theme="dark"] .hero a,html[data-theme="dark"] .results a{color:#bfe0ff}
+@media (max-width:640px){
+ html{scroll-padding-top:96px}
+ .nav .wrap{padding-top:8px;padding-bottom:8px;gap:8px 12px}
+ .nav b{font-size:1rem}
+ .theme-toggle{width:38px;height:38px}
+ .nav nav{overflow-x:auto;scrollbar-width:none}
+ .nav nav::-webkit-scrollbar{display:none}
+ .nav ul{flex-wrap:nowrap;gap:16px;white-space:nowrap}
+ .nav a{font-size:14px}
+ .wrap{padding:0 16px}
+ section{padding:40px 0}
+ .project{padding:20px}
+ .results{padding:18px}
+}
 </style>
 </head>
 <body>
@@ -312,7 +325,8 @@ html[data-theme="dark"] .hero a,html[data-theme="dark"] .results a{color:#bfe0ff
 <section id="experience">
   <h2>Experience</h2>
   <p class="sub">From analytics internships to owning production systems.</p>
-  <div class="exp-grid" style="grid-template-columns: 1fr 300px;">
+  <!-- <div class="exp-grid" style="grid-template-columns: 1fr 300px;"> -->
+    <div class="exp-grid"></div>
     <div class="xp">
       <article>
         <span class="when">Sep 2024 to Current</span>
@@ -778,7 +792,7 @@ function set(t,save){root.classList.add('theme-anim');root.setAttribute('data-th
  setTimeout(function(){root.classList.remove('theme-anim')},450)}
 label();
 btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark',true)});
-// if(window.matchMedia){matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){var t=null;try{t=localStorage.getItem('theme')}catch(x){}if(!t)set(e.matches?'dark':'light',false)})}
+if(window.matchMedia){matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){var t=null;try{t=localStorage.getItem('theme')}catch(x){}if(!t)set(e.matches?'dark':'light',false)})}
 })();
 </script>
 </body>
