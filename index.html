@@ -240,7 +240,7 @@ html[data-theme="dark"] .hero .btn.ghost,html[data-theme="dark"] .hero .btn.prim
 html[data-theme="dark"] .hero .btn.primary{color:#0f2a3a}
 html[data-theme="dark"] .nav a:hover{color:var(--accent)}
 html[data-theme="dark"] .hero a,html[data-theme="dark"] .results a{color:#bfe0ff}
-@media (max-width:640px){
+/* @media (max-width:640px){
  html{scroll-padding-top:96px}
  .nav .wrap{padding-top:8px;padding-bottom:8px;gap:8px 12px}
  .nav b{font-size:1rem}
@@ -253,6 +253,10 @@ html[data-theme="dark"] .hero a,html[data-theme="dark"] .results a{color:#bfe0ff
  section{padding:40px 0}
  .project{padding:20px}
  .results{padding:18px}
+} */
+@media (min-width:901px){
+ .exp-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start}
+ .sticky-photo{position:sticky;top:90px;margin:0}
 }
 </style>
 </head>
